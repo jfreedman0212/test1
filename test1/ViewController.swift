@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class ViewController: UIViewController {
 
@@ -19,7 +21,14 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("view apperared")
+        //var name = "uniqueName"
+        //ref.child("patient").child(name).setValue(["test": "Test"])
+        
+        ref.child("patient").childByAutoId().setValue(["test": "Test"])
+    }
 
 }
 
